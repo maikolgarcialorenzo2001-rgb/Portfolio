@@ -1,0 +1,17 @@
+/* ── Gradient left border for bio quote ── */
+
+.bio-quote {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.bio-quote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+  border-radius: 99px;
+}

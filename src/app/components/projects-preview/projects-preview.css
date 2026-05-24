@@ -1,0 +1,62 @@
+/* ── Project Card ── */
+
+.project-card {
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--pc, #7c3aed);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--pc, #7c3aed) 15%, transparent);
+}
+
+/* ── Descripción scrolleable ── */
+
+.desc-scroll {
+  max-height: 96px;
+  overflow-y: auto;
+  padding-right: 4px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+.desc-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.desc-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.desc-scroll::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 99px;
+}
+
+/* ── Tech tag hover effects ── */
+
+.tech-tag-icon {
+  background: #f3f4f6;
+  transition: background 0.3s;
+}
+
+.project-card:hover .tech-tag-icon {
+  background: color-mix(in srgb, var(--pc, #7c3aed) 12%, white);
+}
+
+.tech-tag-text {
+  transition: color 0.3s;
+}
+
+.project-card:hover .tech-tag-text {
+  color: var(--pc, #7c3aed);
+}
+
+.tech-tag {
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover .tech-tag {
+  background: color-mix(in srgb, var(--pc, #7c3aed) 8%, white);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--pc, #7c3aed) 10%, transparent);
+}

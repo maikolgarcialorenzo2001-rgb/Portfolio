@@ -1,0 +1,17 @@
+<app-hero-section></app-hero-section>
+<app-about-section></app-about-section>
+<app-projects-preview></app-projects-preview>
+<app-skills-preview></app-skills-preview>
+<app-cv-section></app-cv-section>
+<app-footer></app-footer>
+
+<!-- Floating scroll indicator -->
+@if (showScrollIndicator()) {
+  <button (click)="scrollToNext()"
+          class="fixed bottom-8 right-8 z-40 flex flex-col items-center gap-1.5 text-gray-400 transition-all duration-300 hover:text-primary cursor-pointer group">
+    <span class="text-[10px] font-semibold tracking-[0.2em] uppercase group-hover:tracking-[0.25em] transition-all">Scroll</span>
+    <svg class="w-5 h-5 animate-bounce group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </button>
+}

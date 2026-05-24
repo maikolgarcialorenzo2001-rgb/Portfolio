@@ -1,0 +1,40 @@
+/* ── Skill cards con hover adaptativo por color ── */
+
+.skill-card {
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--sc);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--sc) 20%, transparent);
+  transform: translateY(-4px);
+}
+
+/* Icon background: gris por defecto → color de la skill al hover */
+.skill-icon-bg {
+  background: #f3f4f6;
+  transition: background 0.3s;
+}
+
+.skill-card:hover .skill-icon-bg {
+  background: color-mix(in srgb, var(--sc) 15%, white);
+}
+
+/* Nombre de la skill: gris → color de la skill */
+.skill-name {
+  transition: color 0.3s;
+}
+
+.skill-card:hover .skill-name {
+  color: var(--sc);
+}
+
+/* Iniciales (fallback cuando no hay SVG) */
+.skill-initials {
+  color: #9ca3af;
+  transition: color 0.3s;
+}
+
+.skill-card:hover .skill-initials {
+  color: var(--sc);
+}
