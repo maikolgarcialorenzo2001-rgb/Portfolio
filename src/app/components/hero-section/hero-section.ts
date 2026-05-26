@@ -18,6 +18,7 @@ export class HeroSection {
 
   readonly profile = this.content.profileData;
   readonly currentPhrase = signal('');
+  readonly copiedEmail = signal(false);
   readonly t = this.translate.t.bind(this.translate);
 
   private phrases: string[] = [];
@@ -71,7 +72,7 @@ export class HeroSection {
     let delay = this.isDeleting ? 30 : 60;
 
     if (!this.isDeleting && this.charIndex === current.length) {
-      delay = 2000;
+      delay = 5000;
       this.isDeleting = true;
     } else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
@@ -88,5 +89,11 @@ export class HeroSection {
       el.scrollIntoView({ behavior: 'smooth' });
       history.replaceState(null, '', '/#cv');
     }
+  }
+
+  copyEmail(): void {
+    navigator.clipboard.writeText(this.profile().email);
+    this.copiedEmail.set(true);
+    setTimeout(() => this.copiedEmail.set(false), 2000);
   }
 }

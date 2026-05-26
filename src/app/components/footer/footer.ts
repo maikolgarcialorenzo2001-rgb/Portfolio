@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ContentService } from '../../services/content.service';
 import { TranslateService } from '../../services/translate.service';
 
@@ -14,9 +14,16 @@ export class Footer {
 
   readonly profile = this.content.profileData;
   readonly currentYear = new Date().getFullYear();
+  readonly copiedEmail = signal(false);
   readonly t = this.translate.t.bind(this.translate);
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  copyEmail(): void {
+    navigator.clipboard.writeText(this.profile().email);
+    this.copiedEmail.set(true);
+    setTimeout(() => this.copiedEmail.set(false), 2000);
   }
 }
