@@ -6,8 +6,7 @@
 
 .skill-card:hover {
   border-color: var(--sc);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--sc) 20%, transparent);
-  transform: translateY(-4px);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--sc) 15%, transparent);
 }
 
 /* Icon background: gris por defecto → color de la skill al hover */
@@ -20,6 +19,33 @@
   background: color-mix(in srgb, var(--sc) 15%, white);
 }
 
+/* Dark mode — fondo y bordes con más contraste */
+:host-context(.dark) .skill-card {
+  background-color: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:host-context(.dark) .skill-card:hover {
+  border-color: var(--sc);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--sc) 25%, transparent);
+}
+
+:host-context(.dark) .skill-icon-bg {
+  background: #1e293b;
+}
+
+:host-context(.dark) .skill-icon-bg img {
+  filter: brightness(0) invert(1);
+}
+
+:host-context(.dark) .skill-card:hover .skill-icon-bg {
+  background: color-mix(in srgb, var(--sc) 20%, #1e293b);
+}
+
+:host-context(.dark) .skill-card:hover .skill-icon-bg {
+  background: color-mix(in srgb, var(--sc) 25%, #0f172a);
+}
+
 /* Nombre de la skill: gris → color de la skill */
 .skill-name {
   transition: color 0.3s;
@@ -27,6 +53,11 @@
 
 .skill-card:hover .skill-name {
   color: var(--sc);
+}
+
+/* Dark mode — nombre más visible */
+:host-context(.dark) .skill-name {
+  color: #cbd5e1;
 }
 
 /* Iniciales (fallback cuando no hay SVG) */
@@ -37,4 +68,9 @@
 
 .skill-card:hover .skill-initials {
   color: var(--sc);
+}
+
+/* Dark mode — iniciales más visibles */
+:host-context(.dark) .skill-initials {
+  color: #64748b;
 }

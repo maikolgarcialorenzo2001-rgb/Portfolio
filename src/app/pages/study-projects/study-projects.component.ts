@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../services/content.service';
+import { TranslateService } from '../../services/translate.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-study-projects',
@@ -10,7 +12,20 @@ import { ContentService } from '../../services/content.service';
 })
 export default class StudyProjectsComponent {
   private readonly content = inject(ContentService);
+  private readonly translate = inject(TranslateService);
+  private readonly seo = inject(SeoService);
+
   readonly projects = this.content.allStudyProjects;
+  readonly t = this.translate.t.bind(this.translate);
+
+  constructor() {
+    this.seo.setPageMeta({
+      title: 'Proyectos de Estudio',
+      description: 'Proyectos de aprendizaje de Maikol Garcia Lorenzo — cada proyecto refleja un escalón en su evolución como desarrollador.',
+      keywords: 'proyectos de estudio, learning projects, frontend, javascript, angular',
+      ogImage: '/assets/img/og-placeholder.svg',
+    });
+  }
 
   readonly iconMap: Record<string, string> = {
     Angular: 'angular',

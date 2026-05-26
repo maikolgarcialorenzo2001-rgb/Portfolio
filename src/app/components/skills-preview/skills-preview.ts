@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ContentService } from '../../services/content.service';
+import { TranslateService } from '../../services/translate.service';
 import type { SkillCategory } from '../../models/skill';
 
 @Component({
@@ -10,10 +11,13 @@ import type { SkillCategory } from '../../models/skill';
 })
 export class SkillsPreview {
   private readonly content = inject(ContentService);
+  private readonly translate = inject(TranslateService);
+
+  readonly t = this.translate.t.bind(this.translate);
 
   readonly categories = [
-    { key: 'frontend' as SkillCategory, label: 'Frontend' },
-    { key: 'tools' as SkillCategory, label: 'Herramientas' },
+    { key: 'frontend' as SkillCategory, labelKey: 'skills.category.frontend' },
+    { key: 'tools' as SkillCategory, labelKey: 'skills.category.tools' },
   ];
 
   readonly iconMap: Record<string, string> = {

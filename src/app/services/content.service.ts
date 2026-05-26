@@ -42,12 +42,6 @@ const SKILLS_DATA: Skill[] = [
 ];
 
 const PROJECTS_DATA: Project[] = [
-  // ============================================================
-  // 👇 ACA VAN TUS PROYECTOS REALES
-  //    Cambiá title, description, techStack, URLs
-  //    Las imágenes se muestran con iniciales hasta que tengas
-  //    las capturas reales en public/assets/img/projects/
-  // ============================================================
   {
     id: 'portfolio',
     title: 'Portafolio Personal',
@@ -141,7 +135,6 @@ Estoy convencido de que cada desafío representa una oportunidad para aprender, 
   email: 'maikolgarcialorenzo2001@gmail.com',
   avatar: '/assets/img/me.png',
   socialLinks: [
-    // 👇 PONÉ TUS URLs REALES
     { platform: 'GitHub', url: 'https://github.com/maikolgarcialorenzo2001-rgb?tab=repositories', icon: 'github' },
     { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/maikol-garcia-lorenzo-601978405/', icon: 'linkedin' },
     { platform: 'Email', url: 'mailto:maikolgarcialorenzo2001@gmail.com', icon: 'email' },

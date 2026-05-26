@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { ContentService } from '../../services/content.service';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-cv-section',
@@ -9,10 +10,13 @@ import { ContentService } from '../../services/content.service';
 })
 export class CvSection {
   private readonly content = inject(ContentService);
+  private readonly translate = inject(TranslateService);
+
   readonly profile = this.content.profileData;
-  readonly allSkills = this.content.allSkills;
-  readonly currentDate = new Date().toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-  });
+  readonly t = this.translate.t.bind(this.translate);
+
+  /** Computed CV filename — cambia automáticamente con el idioma */
+  readonly cvFile = computed(() =>
+    this.translate.currentLang() === 'es' ? 'es' : 'en',
+  );
 }

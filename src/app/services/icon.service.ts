@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class IconService {
-  constructor(
-    private readonly matIconRegistry: MatIconRegistry,
-    private readonly domSanitizer: DomSanitizer,
-  ) {
+  private readonly matIconRegistry = inject(MatIconRegistry);
+  private readonly domSanitizer = inject(DomSanitizer);
+
+  constructor() {
     this.registerIcons();
   }
 

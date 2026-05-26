@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'tailwindcss/preflight' layer(base);
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #7C3AED;
   --color-primary-light: #A78BFA;
@@ -16,6 +18,8 @@
 
 html {
   scroll-behavior: smooth;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 html, body {
@@ -193,6 +197,93 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* ─── Dark Mode ─── */
+.dark body {
+  background-color: #0A0F1E;
+  color: #E2E8F0;
+}
+
+/* Custom color variables overrides */
+.dark {
+  --color-surface: #0F172A;
+  --color-surface-alt: #1E293B;
+  --color-primary-light: #8B5CF6;
+}
+
+/* Glass utility — dark variant */
+.dark .glass {
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Gradient text hero — dark */
+.dark .gradient-text-hero {
+  background: linear-gradient(135deg, #E2E8F0 0%, var(--color-primary) 50%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Common utility overrides for dark mode */
+.dark .bg-white { background-color: #0F172A; }
+
+.dark .text-gray-900 { color: #F1F5F9; }
+.dark .text-gray-700 { color: #CBD5E1; }
+.dark .text-gray-600 { color: #94A3B8; }
+.dark .text-gray-500 { color: #64748B; }
+.dark .text-gray-300 { color: #CBD5E1; }
+.dark .text-gray-400 { color: #64748B; }
+.dark .text-gray-800 { color: #F1F5F9; }
+.dark .text-gray-200 { color: #E2E8F0; }
+.dark .text-gray-100 { color: #F1F5F9; }
+
+.dark .border-gray-100 { border-color: rgba(255,255,255,0.06); }
+.dark .border-gray-200 { border-color: rgba(255,255,255,0.1); }
+.dark .border-gray-300 { border-color: rgba(255,255,255,0.12); }
+.dark .border-gray-400 { border-color: rgba(255,255,255,0.15); }
+
+/* Background gray light variants */
+.dark .bg-gray-50 { background-color: #0F172A; }
+.dark .bg-gray-100 { background-color: #1E293B; }
+.dark .bg-gray-200 { background-color: #1E293B; }
+.dark .bg-surface { background-color: #0F172A; }
+
+/* Specific component overrides */
+.dark .bg-surface-alt { background-color: #1E293B; }
+.dark .bg-gradient-to-b { background-color: transparent; }
+
+/* Cards & containers */
+.dark .project-card {
+  background-color: #1E293B !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Footer overrides */
+.dark .bg-gray-900 { background-color: #020617; }
+.dark .bg-gray-800 { background-color: #0F172A; }
+
+/* Nav active */
+.dark .active-nav {
+  background: rgba(124, 58, 237, 0.15) !important;
+}
+
+/* Dot pattern — dark */
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1.2px, transparent 1.2px);
+}
+
+/* Scrollbar — dark */
+.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+/* Bio quote */
+.dark .bio-quote {
+  color: #CBD5E1;
 }
 
 /* ─── Reduced Motion ─── */

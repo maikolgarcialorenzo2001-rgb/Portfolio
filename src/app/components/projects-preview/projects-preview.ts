@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../services/content.service';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-projects-preview',
@@ -10,7 +11,10 @@ import { ContentService } from '../../services/content.service';
 })
 export class ProjectsPreview {
   private readonly content = inject(ContentService);
+  private readonly translate = inject(TranslateService);
+
   readonly projects = this.content.getFeaturedProjects();
+  readonly t = this.translate.t.bind(this.translate);
 
   /** Mapeo de tecnología → nombre de archivo SVG en assets/icons/ */
   readonly iconMap: Record<string, string> = {

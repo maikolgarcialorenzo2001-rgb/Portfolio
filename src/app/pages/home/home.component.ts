@@ -6,6 +6,8 @@ import { SkillsPreview } from '../../components/skills-preview/skills-preview';
 import { ProjectsPreview } from '../../components/projects-preview/projects-preview';
 import { CvSection } from '../../components/cv-section/cv-section';
 import { Footer } from '../../components/footer/footer';
+import { TranslateService } from '../../services/translate.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +25,20 @@ import { Footer } from '../../components/footer/footer';
 export default class HomeComponent implements AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly translate = inject(TranslateService);
+  private readonly seo = inject(SeoService);
 
   readonly showScrollIndicator = signal(true);
+  readonly t = this.translate.t.bind(this.translate);
+
+  constructor() {
+    this.seo.setPageMeta({
+      title: 'Frontend Developer',
+      description: 'Portafolio de Maikol Garcia Lorenzo — Frontend Developer especializado en Angular, TypeScript y arquitectura limpia. Proyectos reales construidos desde cero.',
+      keywords: 'frontend developer, angular, typescript, portfolio, desarrollador web, cuba',
+      ogImage: '/assets/img/og-placeholder.svg',
+    });
+  }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -73,14 +87,11 @@ export default class HomeComponent implements AfterViewInit {
       }
       const rect = footer.getBoundingClientRect();
       const vh = window.innerHeight;
-      // Ocultar solo si el footer ocupa AL MENOS 1px en pantalla
       this.showScrollIndicator.set(rect.top >= vh || rect.bottom <= 0);
     };
 
-    // Initial check
     checkFooterVisibility();
 
-    // Check on scroll
     window.addEventListener('scroll', checkFooterVisibility, { passive: true });
     this.destroyRef.onDestroy(() =>
       window.removeEventListener('scroll', checkFooterVisibility),

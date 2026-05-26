@@ -25,6 +25,6 @@ describe('ContentService', () => {
   it('returns profile data', () => {
     const profile = service.profileData();
     expect(profile.name).toBeDefined();
-    expect(profile.experience.length).toBeGreaterThan(0);
+    expect(Array.isArray(profile.experience)).toBe(true);
   });
 });

@@ -1,4 +1,4 @@
-<section id="skills" class="relative min-h-screen flex flex-col justify-center items-center px-4 py-24 scroll-mt-16 bg-gradient-to-b from-white to-surface-alt overflow-hidden">
+<section id="skills" class="relative flex flex-col justify-center items-center px-4 py-24 scroll-mt-16 bg-white overflow-hidden">
   <!-- Background decorative blobs + dot pattern -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden bg-dot-pattern">
     <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-accent/5 blur-3xl animate-float-slow"></div>
@@ -11,12 +11,12 @@
   <div class="relative z-10 max-w-5xl w-full">
     <!-- Header -->
     <div class="text-center mb-16 reveal">
-      <span class="text-xs font-semibold tracking-widest uppercase text-primary">Skills</span>
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-2">
-        Tecnologías que <span class="gradient-text">domino</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-primary">{{ t('skills.section_label') }}</span>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-2 gradient-text">
+        {{ t('skills.title') }}
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-        Herramientas con las que construyo productos reales, todos los días.
+        {{ t('skills.description') }}
       </p>
       <div class="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-4"></div>
     </div>
@@ -38,12 +38,14 @@
                 </svg>
               }
             </span>
-            {{ category.label }}
+            {{ t(category.labelKey) }}
           </h3>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            @for (skill of getSkills(category.key); track skill.name) {
-              <div class="skill-card relative p-4 rounded-xl bg-white border border-gray-100 shadow-sm"
+            @for (skill of getSkills(category.key); track skill.name; let i = $index) {
+              <div class="skill-card group relative p-4 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2 reveal"
+                   [class.reveal-delay-1]="i % 3 === 1"
+                   [class.reveal-delay-2]="i % 3 === 2"
                    [style.--sc]="getSkillColor(skill.name)">
                 <div class="flex flex-col items-center text-center gap-2.5">
                   <div class="skill-icon-bg w-10 h-10 rounded-lg flex items-center justify-center p-2">
@@ -53,7 +55,7 @@
                       <span class="skill-initials text-xs font-bold font-mono">{{ skill.name.substring(0, 2).toUpperCase() }}</span>
                     }
                   </div>
-                  <span class="skill-name block text-sm font-medium text-gray-700">{{ skill.name }}</span>
+                  <span class="skill-name block text-sm font-medium text-gray-700 group-hover:text-[var(--sc)]">{{ skill.name }}</span>
                 </div>
               </div>
             }

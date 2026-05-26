@@ -33,6 +33,15 @@
   border-radius: 99px;
 }
 
+/* Dark mode — scrollbar colors */
+:host-context(.dark) .desc-scroll {
+  scrollbar-color: #334155 transparent;
+}
+
+:host-context(.dark) .desc-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
 /* ── Tech tag hover effects ── */
 
 .tech-tag-icon {
@@ -42,6 +51,19 @@
 
 .project-card:hover .tech-tag-icon {
   background: color-mix(in srgb, var(--pc, #7c3aed) 12%, white);
+}
+
+/* Dark mode — tech tag bg más oscuro */
+:host-context(.dark) .tech-tag-icon {
+  background: #1e293b;
+}
+
+:host-context(.dark) .tech-tag-icon img {
+  filter: brightness(0) invert(1);
+}
+
+:host-context(.dark) .project-card:hover .tech-tag-icon {
+  background: color-mix(in srgb, var(--pc, #7c3aed) 20%, #1e293b);
 }
 
 .tech-tag-text {
@@ -59,4 +81,10 @@
 .project-card:hover .tech-tag {
   background: color-mix(in srgb, var(--pc, #7c3aed) 8%, white);
   box-shadow: 0 2px 8px color-mix(in srgb, var(--pc, #7c3aed) 10%, transparent);
+}
+
+/* Dark mode — tech tag hover más oscuro */
+:host-context(.dark) .project-card:hover .tech-tag {
+  background: color-mix(in srgb, var(--pc, #7c3aed) 12%, #1e293b);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--pc, #7c3aed) 15%, transparent);
 }

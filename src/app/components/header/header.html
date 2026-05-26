@@ -1,9 +1,9 @@
 <header class="fixed top-0 z-50 w-full h-16 glass shadow-sm">
   <div class="flex justify-between items-center h-full px-6 sm:px-10">
-    <a href="/" class="text-lg font-bold gradient-text tracking-tight shrink-0">
+    <a href="/" class="text-lg font-bold gradient-text tracking-tight shrink-0 hidden md:block">
       {{profile().name}}
     </a>
-    <app-nav-menu></app-nav-menu>
+    <app-nav-menu class="order-first md:order-none"></app-nav-menu>
     <app-contact></app-contact>
   </div>
 </header>

@@ -1,0 +1,36 @@
+.lang-es {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(236, 72, 153, 0.9));
+  color: white;
+}
+
+.lang-en {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.lang-en:hover {
+  background: white;
+}
+
+/* Dark mode — EN button más acorde */
+:host-context(.dark) .lang-en {
+  background: rgba(30, 41, 59, 0.9);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:host-context(.dark) .lang-en:hover {
+  background: #1e293b;
+}
+
+/* ── Flip animation ── */
+.flip {
+  animation: flip 0.6s ease-in-out;
+}
+
+@keyframes flip {
+  0%   { transform: rotateY(0deg); }
+  50%  { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}

@@ -2,6 +2,7 @@ import { Component, DestroyRef, inject, signal, afterNextRender, PLATFORM_ID } f
 import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -13,6 +14,7 @@ export class NavMenu {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly translate = inject(TranslateService);
   private rafId: number | null = null;
   private scrollHandler: (() => void) | null = null;
   private readonly HEADER_OFFSET = 96;
@@ -20,6 +22,7 @@ export class NavMenu {
 
   readonly activeSection = signal<string>('home');
   readonly mobileOpen = signal(false);
+  readonly t = this.translate.t.bind(this.translate);
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
