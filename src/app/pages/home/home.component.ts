@@ -36,7 +36,7 @@ export default class HomeComponent implements AfterViewInit {
       title: 'Frontend Developer',
       description: 'Portafolio de Maikol Garcia Lorenzo — Frontend Developer especializado en Angular, TypeScript y arquitectura limpia. Proyectos reales construidos desde cero.',
       keywords: 'frontend developer, angular, typescript, portfolio, desarrollador web, cuba',
-      ogImage: '/assets/img/og-placeholder.svg',
+      ogImage: 'assets/img/og-placeholder.svg',
     });
   }
 

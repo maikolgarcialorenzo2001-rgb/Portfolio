@@ -23,7 +23,7 @@ export default class StudyProjectsComponent {
       title: 'Proyectos de Estudio',
       description: 'Proyectos de aprendizaje de Maikol Garcia Lorenzo — cada proyecto refleja un escalón en su evolución como desarrollador.',
       keywords: 'proyectos de estudio, learning projects, frontend, javascript, angular',
-      ogImage: '/assets/img/og-placeholder.svg',
+      ogImage: 'assets/img/og-placeholder.svg',
     });
   }
 

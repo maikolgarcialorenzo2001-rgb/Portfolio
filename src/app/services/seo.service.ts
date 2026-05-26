@@ -9,7 +9,7 @@ export interface SeoConfig {
 }
 
 const SITE_NAME = 'Maikol Garcia Lorenzo';
-const DEFAULT_OG_IMAGE = '/assets/img/og-placeholder.svg';
+const DEFAULT_OG_IMAGE = 'assets/img/og-placeholder.svg';
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {
