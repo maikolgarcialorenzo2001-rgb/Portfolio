@@ -34,7 +34,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Glass Morphism ─── */
+/* Glass */
+
 @utility glass {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
@@ -49,7 +50,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ─── Gradient Text ─── */
+/* Gradient text */
 @utility gradient-text {
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
@@ -64,7 +65,7 @@ body {
   background-clip: text;
 }
 
-/* ─── Animations ─── */
+/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-16px); }
@@ -136,7 +137,7 @@ body {
   animation: spin-slow 20s linear infinite;
 }
 
-/* ─── Scroll Reveal ─── */
+/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -154,13 +155,13 @@ body {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ─── Active Nav ─── */
+/* Active nav */
 .active-nav {
   color: var(--color-primary) !important;
   background: rgba(124, 58, 237, 0.08) !important;
 }
 
-/* ─── Grid Pattern Background ─── */
+/* Grid pattern */
 .bg-grid-pattern {
   background-image:
     linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
@@ -175,13 +176,13 @@ body {
   background-size: 60px 60px;
 }
 
-/* ─── Dot Pattern ─── */
+/* Dot pattern */
 .bg-dot-pattern {
   background-image: radial-gradient(rgba(124, 58, 237, 0.12) 1.2px, transparent 1.2px);
   background-size: 24px 24px;
 }
 
-/* ─── Scrollbar ─── */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -199,7 +200,7 @@ body {
   background: var(--color-primary);
 }
 
-/* ─── Dark Mode ─── */
+/* Dark mode */
 .dark body {
   background-color: #0A0F1E;
   color: #E2E8F0;
@@ -286,7 +287,7 @@ body {
   color: #CBD5E1;
 }
 
-/* ─── Reduced Motion ─── */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

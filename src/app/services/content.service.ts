@@ -24,9 +24,7 @@ export class ContentService {
   }
 }
 
-// ============================================================
-// 👇 EDITÁ ESTOS DATOS CON TU INFORMACIÓN REAL
-// ============================================================
+// Datos editables
 
 const SKILLS_DATA: Skill[] = [
   { name: 'Angular', category: 'frontend', level: 4 },
@@ -72,9 +70,7 @@ const PROJECTS_DATA: Project[] = [
   },
 ];
 
-// ============================================================
-// 📚 PROYECTOS DE ESTUDIO
-// ============================================================
+// Proyectos de estudio
 const STUDY_PROJECTS_DATA: Project[] = [
   {
     id: 'study-galery',
@@ -115,9 +111,6 @@ const STUDY_PROJECTS_DATA: Project[] = [
 ];
 
 const PROFILE_DATA: Profile = {
-  // ============================================================
-  // 👇 EDITÁ CON TUS DATOS REALES
-  // ============================================================
   name: 'Maikol Garcia Lorenzo',
   title: 'Frontend Developer',
   subtitle: '',

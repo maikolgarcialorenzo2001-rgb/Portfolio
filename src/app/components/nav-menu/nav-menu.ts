@@ -91,9 +91,7 @@ export class NavMenu {
 
       const rect = el.getBoundingClientRect();
 
-      // Buscamos la sección cuyo top esté MÁS CERCA del header,
-      // ya esté arriba (scrolleada) o abajo (por scrollear).
-      // Esto es más robusto que buscar solo las que están arriba.
+      // Busca la sección más cercana al header, sin importar dirección
       const dist = Math.abs(rect.top - headerOffset);
       if (dist < closestDist) {
         closestDist = dist;

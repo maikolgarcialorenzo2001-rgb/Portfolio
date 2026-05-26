@@ -8,7 +8,7 @@ export class TranslateService {
   readonly currentLang = this.lang.asReadonly();
 
   private readonly dict: Record<string, { es: string; en: string }> = {
-    // ─── Nav ───
+    // Nav
     'nav.home':        { es: 'Inicio',         en: 'Home' },
     'nav.about':       { es: 'Sobre mí',       en: 'About Me' },
     'nav.projects':    { es: 'Proyectos',      en: 'Projects' },
@@ -16,12 +16,12 @@ export class TranslateService {
     'nav.cv':          { es: 'CV',             en: 'Resume' },
     'nav.menu_label':  { es: 'Menú de navegación', en: 'Navigation menu' },
 
-    // ─── Hero ───
+    // Hero
     'hero.available':  { es: 'Disponible para nuevos proyectos', en: 'Available for new projects' },
     'hero.view_cv':    { es: 'Ver CV',         en: 'View Resume' },
     'hero.contact_me': { es: 'Contáctame',     en: 'Contact Me' },
 
-    // ─── About ───
+    // About
     'about.section_label':      { es: 'Sobre mí',       en: 'About Me' },
     'about.title':              { es: 'Conoce a quien está detrás del código', en: 'Meet the person behind the code' },
     'about.stats.projects':     { es: 'Proyectos',      en: 'Projects' },
@@ -29,14 +29,14 @@ export class TranslateService {
     'about.experience_title':   { es: 'Experiencia Profesional', en: 'Professional Experience' },
     'about.present':            { es: 'Actualidad',     en: 'Present' },
 
-    // ─── Skills ───
+    // Skills
     'skills.section_label':     { es: 'Skills',             en: 'Skills' },
     'skills.title':             { es: 'Tecnologías que domino', en: 'Technologies I master' },
     'skills.description':       { es: 'Herramientas con las que construyo productos reales, todos los días.', en: 'Tools I use to build real products, every day.' },
     'skills.category.frontend': { es: 'Frontend',           en: 'Frontend' },
     'skills.category.tools':    { es: 'Herramientas',       en: 'Tools' },
 
-    // ─── Projects ───
+    // Projects
     'projects.section_label': { es: 'Proyectos',       en: 'Projects' },
     'projects.title':         { es: 'Trabajos que hablan solos', en: 'Work that speaks for itself' },
     'projects.description':   { es: 'Cada proyecto es una historia de decisiones técnicas, código limpio y resultados concretos.', en: 'Each project is a story of technical decisions, clean code, and concrete results.' },
@@ -47,13 +47,13 @@ export class TranslateService {
     'projects.intro':         { es: 'Te invito a conocer mis proyectos. No son perfectos, pero reflejan de forma honesta mi evolución como desarrollador. Cada uno representa nuevos aprendizajes, desafíos superados y habilidades adquiridas. Más que proyectos, son la evidencia de mi crecimiento, mi esfuerzo constante y mi compromiso con seguir aprendiendo cada día.', en: "I invite you to explore my projects. They aren't perfect, but they honestly reflect my evolution as a developer. Each one represents new learnings, challenges overcome, and skills acquired. More than projects, they are evidence of my growth, my constant effort, and my commitment to keep learning every day." },
     'projects.study_button':  { es: 'Proyectos de estudio', en: 'Study Projects' },
 
-    // ─── CV / Resume ───
+    // CV / Resume
     'cv.section_label': { es: 'Curriculum',              en: 'Resume' },
     'cv.title':         { es: 'Mi Trayectoria',          en: 'My Journey' },
     'cv.description':   { es: 'Toda mi experiencia profesional, formación y habilidades en un solo lugar.', en: 'All my professional experience, education, and skills in one place.' },
     'cv.download':      { es: 'Descargar CV en PDF',     en: 'Download Resume (PDF)' },
 
-    // ─── Project Descriptions ───
+    // Project descriptions
     'project.title.portfolio':    { es: 'Portafolio Personal',    en: 'Personal Portfolio' },
     'project.title.cine-verse':  { es: 'CineVerse',               en: 'CineVerse' },
     'project.title.eco-taxis':   { es: 'EcoTaxis',                en: 'EcoTaxis' },
@@ -70,19 +70,19 @@ export class TranslateService {
     'project.desc.study-shop':    { es: 'Simulación de tienda online de zapatillas con selector de talle y color, carrito de compras, panel de reseñas, inicio de sesión y notificaciones en tiempo real. Todo con JavaScript vanilla.', en: 'Sneaker online store simulation with size and color selector, shopping cart, reviews panel, login, and real-time notifications. All with vanilla JavaScript.' },
     'project.desc.study-simple-movie': { es: 'Explorador de películas estilo Netflix con filtros por categoría, género, país y año. Buscador con sugerencias, panel de recomendaciones y overlay con info y tráiler. Usa Alpine.js para los dropdowns.', en: 'Netflix-style movie explorer with filters by category, genre, country, and year. Search with suggestions, recommendations panel, and overlay with info and trailer. Uses Alpine.js for dropdowns.' },
 
-    // ─── Footer ───
+    // Footer
     'footer.back_to_top': { es: 'Volver arriba',         en: 'Back to top' },
 
-    // ─── Study Projects ───
+    // Study projects
     'study.section_label': { es: 'Estudio',         en: 'Study' },
     'study.title':         { es: 'Proyectos de aprendizaje', en: 'Learning Projects' },
     'study.description':   { es: 'Cada proyecto refleja un escalón en mi evolución como desarrollador. De principiante a código limpio, el camino se ve aquí.', en: 'Each project reflects a step in my evolution as a developer. From beginner to clean code, the journey is visible here.' },
     'study.back':          { es: 'Volver',           en: 'Back' },
 
-    // ─── Home scroll ───
+    // Home scroll
     'home.scroll': { es: 'Scroll', en: 'Scroll' },
 
-    // ─── Content (bio, etc.) ───
+    // Content
     'content.short_bio': {
       es: 'Frontend developer autodidacta. 5 proyectos reales construidos desde cero.',
       en: 'Self-taught frontend developer. 5 real projects built from scratch.',

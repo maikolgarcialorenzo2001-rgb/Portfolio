@@ -13,7 +13,7 @@
   background: white;
 }
 
-/* Dark mode — EN button más acorde */
+/* Dark mode */
 :host-context(.dark) .lang-en {
   background: rgba(30, 41, 59, 0.9);
   color: #e2e8f0;
@@ -24,7 +24,7 @@
   background: #1e293b;
 }
 
-/* ── Flip animation ── */
+/* Flip animation */
 .flip {
   animation: flip 0.6s ease-in-out;
 }
